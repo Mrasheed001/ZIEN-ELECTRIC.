@@ -37,6 +37,11 @@
                     
                   </ul>
                 </nav> 
+                <nav class="ham-menu">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </nav>
           </div>
         </div>
     </header>
@@ -199,24 +204,6 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     <script>
-
-
-  
-
-
-  const text = " Engineering Excellence,";
-  let index = 0;
-  function animateText() {
-    if (index < text.length) {
-      document.getElementById("animatedText").innerHTML += text[index];
-      index++;
-      setTimeout(animateText, 100);
-    }
-  }
-  animateText();
-
-
-        
       const navbar=document.getElementById('navbar');
       let scrolled=false;
       
@@ -238,8 +225,16 @@
           }
       }
 
+      const hammenu=document.querySelector('.ham-menu');
+
+      const navlinks=document.querySelector('.nav-links');
+
+      hammenu.addEventListener('click', () => {
+        hammenu.classList.toggle('active');
+        navlinks.classList.toggle('active')
+      })
+
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
-
 </body>
 </html>
