@@ -235,6 +235,17 @@
       })
 
       document.getElementById("year").textContent = new Date().getFullYear();
+
+  const text = "Engineering Excellence,";
+  let index = 0;
+  function animateText() {
+    if (index < text.length) {
+      document.getElementById("animatedText").innerHTML += text[index];
+      index++;
+      setTimeout(animateText, 100);
+    }
+  }
+  animateText();
     </script>
 </body>
 </html>
