@@ -44,7 +44,7 @@
       <section id="home-hero" class="hero">
         <div style="text-align: center;" class=" hero-content">
           <h1>
-            <strong> Engineering Excellence,</strong><br> Transform Your Space with Expert Electrical services
+            <strong id="animatedText"> Engineering Excellence,</strong><br> Transform Your Space with Expert Electrical services
           </h1>
           <p style="line-height: 30px;">
             Years of experience, cutting-edge technology and a commitment to quality. Safe, Reliable, and Efficient Electrical Solutions for Your Home and Business.
@@ -199,6 +199,20 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     <script>
+
+
+  const text = document.getElementById("animatedText");
+  let index = 0;
+  function animateText() {
+    if (index < text.length) {
+      document.text.innerHTML += text[index];
+      index++;
+      setTimeout(animateText, 100);
+    }
+  }
+  animateText();
+
+        
       const navbar=document.getElementById('navbar');
       let scrolled=false;
       
