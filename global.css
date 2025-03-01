@@ -231,6 +231,8 @@ a .btn{
 
     .navbar li{
         padding-bottom: 15px;
+        paddin:0 -5px;
+        margin:0 5px;
     }
 
     .navbar a:hover{
@@ -298,3 +300,8 @@ a .btn{
         text-align: center;
     }
     
+@media(max-width: 767px) {
+        .hide{
+            visibility: hidden;
+        }
+    }
