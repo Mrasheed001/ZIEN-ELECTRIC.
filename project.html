@@ -36,7 +36,12 @@
                     </li>
                     
                   </ul>
-                </nav> 
+                </nav>
+                <nav class="ham-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </nav>
           </div>
         </div>
     </header>
@@ -179,28 +184,37 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="lightbox.min.js"></script>
 <script>
-    const navbar=document.getElementById('navbar');
-    let scrolled=false;
-    
-    
-    window.onscroll = function(){
-        if (window.pageYOffset > 100) {
-            navbar.classList.remove('top');
-            if (!scrolled) {
-                navbar.style.transform='translateY(-70px)';
-                setTimeout(function () {
-                    navbar.style.transform='translateY(0)';
-                    scrolled=true                
-                },200);            
-            }
-            
-        } else{
-            navbar.classList.add('top')
-            scrolled=false
-        }
-    }
+      const navbar=document.getElementById('navbar');
+      let scrolled=false;
+      
+      
+      window.onscroll = function(){
+          if (window.pageYOffset > 100) {
+              navbar.classList.remove('top');
+              if (!scrolled) {
+                  navbar.style.transform='translateY(-70px)';
+                  setTimeout(function () {
+                      navbar.style.transform='translateY(0)';
+                      scrolled=true                
+                  },200);            
+              }
+              
+          } else{
+              navbar.classList.add('top')
+              scrolled=false
+          }
+      }
 
-    document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+      const hammenu=document.querySelector('.ham-menu');
+
+      const navlinks=document.querySelector('.nav-links');
+
+      hammenu.addEventListener('click', () => {
+        hammenu.classList.toggle('active');
+        navlinks.classList.toggle('active')
+      })
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
