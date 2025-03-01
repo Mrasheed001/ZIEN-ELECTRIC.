@@ -280,10 +280,11 @@ a .btn{
         width: 100%;
     }
 
-    .hero p{
-        line-height: 18px;
+    .hero p,h1{
+        line-height: 30px;
         margin-left: 10px;
         text-align: center;
+        font-size:large;
     }
     .nav-links{
         justify-content: 20%;
