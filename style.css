@@ -1,0 +1,90 @@
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: x-large;
+    color: #fff;
+    z-index: 10;
+    letter-spacing: 1.2px;}
+
+    /*font-family: 'poppins', sans-serif;s
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}*/
+strong{
+    color: rgb(160, 217, 240);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2.5rem;
+}
+
+
+
+ h1, p{
+    z-index: 10;
+}
+
+#services,
+#about-us
+#home-hero{
+    margin: 10px;
+}
+
+.about{
+    background: url('about-H.jpg') no-repeat center center/cover;
+    height: 50vh;
+    position:relative;
+    color: #000;
+    background-attachment: fixed;
+    margin-bottom: 20px;
+}
+.services{
+    background: url('services-H.jpg') no-repeat center center/cover;
+    height: 50vh;
+    position:relative;
+    color: #000;
+    background-attachment: fixed;
+    margin-bottom: 20px;
+}
+.section-title{
+    text-align: center;
+}
+
+.contact-header{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.contact-form{
+    width:95%;
+}
+
+
+
+.map{
+    margin: 20px 10px;
+}
+
+.control-group{
+    display: block;
+    margin-bottom:15px 0;
+
+}
+
+.form-control{
+    margin-bottom: 15px;
+}
+
+.control-group input,textarea{
+    width: 100%;
+    margin: 15px 10px;
+    border-radius: 5px;
+
+}
