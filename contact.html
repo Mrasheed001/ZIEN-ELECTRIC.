@@ -11,9 +11,9 @@
 </head>
 <body>
     <header class="home-nav">
-        <div class="navbar top">
-          <div id="navbar" class="navbar top">
-            <a class="logo" style="    opacity: 1;border-bottom: transparent;" href="index.html">
+      <div class="navbar top">
+        <div id="navbar" class="navbar top">
+            <a class="logo" style="opacity: 1;border-bottom: transparent;" href="index.html">
                 <img id="logo" src="logo.svg" alt="logo images">
             </a>
                 <nav>                
@@ -35,12 +35,12 @@
                     </li>
                     
                   </ul>
+                </nav> 
+                <nav class="ham-menu">
+                  <span></span>
+                  <span></span>
+                  <span></span>
                 </nav>
-              <nav clss="ham-menu">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-              </nav>
           </div>
         </div>
     </header>
@@ -232,7 +232,7 @@
       })
 
 
-          gsap.from(".h-text", { opacity: 0, x: -50, duration: 2 });
+          gsap.from(".h-text", { opacity: 0, x: 50, duration: 2s});
 
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
