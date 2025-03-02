@@ -227,7 +227,7 @@ a .btn{
         justify-content: center;
         position: fixed;
         top: 0;
-        background: rgb(2, 26, 70,);
+        background: rgb(2, 26, 70,)!important;
         margin: 10 0px;
         right: 0;
         width: 100%;
@@ -275,7 +275,7 @@ a .btn{
     }
 
     .ham-menu.active span:nth-child(2){
-        opacity: 1;
+        opacity: 0;
     }
 
     .ham-menu.active span:nth-child(3){
