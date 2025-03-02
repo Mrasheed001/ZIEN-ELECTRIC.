@@ -237,6 +237,7 @@ a .btn{
         font-size: normal;
         transition: .1s ease, opacity 0.5s ease;
         visibility: hidden;
+        z-index: 2147483647;
     }
 
     .ham-menu{
