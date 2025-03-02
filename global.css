@@ -133,6 +133,11 @@ i{
     background: rgba(0, 0, 0, 0.3) !important;
 }
 
+.Abt-text {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(50px);
+}
+
 .grid-item{
     display: grid;
     grid-template-columns: repeat(2,1fr);
