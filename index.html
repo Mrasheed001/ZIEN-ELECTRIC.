@@ -52,8 +52,7 @@
             <strong id="animatedText"> </strong><br class="Abt-text"> Transform Your Space with Expert Electrical services
           </h1>
           <p class="Abt-text" style="line-height: 30px;">
-            Years of experience, cutting-edge technology and a commitment to quality. Safe, Reliable, and Efficient Electrical Solutions for Your Home and Business.
-          </p>
+                  </p>
           
         </div>
       </section>
@@ -93,7 +92,7 @@
               <img src="about.jpg" style="height: 100vh; width: 100%;" alt=" about image">
             </div>
         
-            <div class="animated-text Abt-text" style="padding: 0px 15px; padding-top: 10px;">
+            <div id=" Abt-text"class="animated-text" style="padding: 0px 15px; padding-top: 10px;">
               <h2> Welome to ZIEN ELECTRIC Where Power Meets Passion</h2>
               <p>At ZIEN ELECTRIC we believe that electricity is more than just a necessity - it's a lifeline that conncts us to the people, places and things we love. <br>
               That's why we're dedicated to delivering exceptional electrical services that illuminate your world, comfort your homr and poer your business</p>
@@ -212,10 +211,9 @@
     </main>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="lightbox.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    
+    <script src="lightbox.min.js"></script>
     <script>
       const navbar=document.getElementById('navbar');
       let scrolled=false;
@@ -259,15 +257,30 @@
   }
   animateText();
 
+
+   const text = "Years of experience, cutting-edge technology and a commitment to quality. Safe, Reliable, and Efficient Electrical Solutions for Your Home and Business.";
+  let index = 0;
+  function animateText() {
+    if (index < text.length) {
+      document.getElementByClassName("abt-Text").innerHTML += text[index];
+      index++;
+      setTimeout(animateText, 100);
+    }
+  }
+  animateText();
+
+
+        
+
          
-  gsap.from(".Abt-text", {
+  gsap.from("#Abt-text", {
     opacity: 0,
     y: 50,
     duration: 1.5,
     scrollTrigger: {
-      trigger: ".Abt-text",
-      start: "top 100%", // When the text enters 100% of viewport
-      end: "bottom top", // Optional: When the text reaches top of viewport
+      trigger: "#Abt-text",
+      start: "100px", // When the text enters 100% of viewport
+      // Optional: When the text reaches top of viewport
       toggleActions: "play none none none", // Play once
     }
   });
