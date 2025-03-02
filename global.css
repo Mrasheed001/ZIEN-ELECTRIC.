@@ -227,7 +227,7 @@ a .btn{
         justify-content: center;
         position: fixed;
         top: 0;
-        background: rgba(2, 26, 70, 0.8);
+        background: rgb(2, 26, 70,);
         margin: 10 0px;
         right: 0;
         width: 100%;
@@ -238,6 +238,7 @@ a .btn{
         transition: .1s ease, opacity 0.5s ease;
         visibility: hidden;
         z-index: 2147483647;
+        opacity:1;
     }
 
     .ham-menu{
@@ -245,6 +246,7 @@ a .btn{
         width: 50px;
         margin-left: auto;
         position: relative;
+        z-index: inherit;
     }
 
     .ham-menu span{
