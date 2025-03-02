@@ -259,7 +259,7 @@ a .btn{
         width: 100%;
         background-color: #fff;
         border-radius: 25px;
-        position: absolute;
+        position: absolute !important;
         top: 50%;
         left: 50%;
         transform: -50%, -50%;
