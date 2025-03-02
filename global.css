@@ -227,7 +227,7 @@ a .btn{
         justify-content: center;
         position: fixed;
         top: 0;
-        background: rgb(2, 26, 70,)!important;
+        background: rgba(2, 26, 70,1)!important;
         margin: 10 0px;
         right: 0;
         width: 100%;
@@ -285,6 +285,7 @@ a .btn{
 
     .nav-links.active{
         visibility: visible;
+        display: block;
     }
 
     .navbar li{
