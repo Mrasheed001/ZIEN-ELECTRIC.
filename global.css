@@ -238,7 +238,7 @@ a .btn{
         transition: .1s ease, opacity 0.5s ease;
         visibility: hidden;
         z-index: 2147483647;
-        opacity:0;
+        opacity:1 !important;
     }
 
     .ham-menu{
@@ -275,7 +275,7 @@ a .btn{
     }
 
     .ham-menu.active span:nth-child(2){
-        opacity: 0;
+        opacity: 1;
     }
 
     .ham-menu.active span:nth-child(3){
