@@ -366,3 +366,14 @@ a .btn{
             visibility: hidden;
         }
     }
+
+    @media(max-width: 414px){
+        .hero{
+    background: url('bg-image.jpg') no-repeat center center/cover;
+    height: 100vh;
+    position:relative;
+    color: #000;
+    background-attachment: fixed;
+    margin-bottom: 20px;
+        }
+    }
