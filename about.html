@@ -190,15 +190,26 @@
               scrolled=false
           }
       }
+document.addEventListener("DOMContentLoaded", function () {
+  const hammenu = document.querySelector(".ham-menu");
+  const navlinks = document.querySelector(".nav-links");
 
-      const hammenu=document.querySelector('.ham-menu');
+  menuToggle.addEventListener("click", function (event) {
+    event.stopPropagation(); // Prevents click event from bubbling
+    hammenu.classList.toggle("active"); // Toggle visibility
+  });
 
-      const navlinks=document.querySelector('.nav-links');
+  // Close menu when clicking outside
+  document.addEventListener("click", function () {
+    hamenu.classList.remove("active");
+  });
 
-      hammenu.addEventListener('click', () => {
-        hammenu.classList.toggle('active');
-        navlinks.classList.toggle('active')
-      })
+  // Prevent closing when clicking inside the menu
+  navlinks.addEventListener("click", function (event) {
+    event.stopPropagation();
+  });
+});
+        
 
 
           gsap.from(".h-text", { opacity: 0, x: -50, duration: 2s });
