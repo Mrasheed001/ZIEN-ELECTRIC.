@@ -49,10 +49,9 @@
       <section id="home-hero" class="hero">
         <div style="text-align: center;" class=" hero-content">
           <h1>
-            <strong id="animatedText"> </strong><br class="Abt-text"> Transform Your Space with Expert Electrical services
+            <strong class="animatedText">Engineering Excellence,</strong><br class="Abt-text"> Transform Your Space with Expert Electrical services
           </h1>
-          <p class="Abt-text" style="line-height: 30px;">
-                  </p>
+          <p class="animatedText" style="line-height: 30px;">Years of experience, cutting-edge technology and a commitment to quality. Safe, Reliable, and Efficient Electrical Solutions for Your Home and Business. </p>
           
         </div>
       </section>
@@ -245,30 +244,25 @@
         navlinks.classList.toggle('active')
       })
 
-      
-  const text = "Engineering Excellence,";
-  let index = 0;
-  function animateText() {
-    if (index < text.length) {
-      document.getElementById("animatedText").innerHTML += text[index];
-      index++;
-      setTimeout(animateText, 100);
-    }
-  }
-  animateText();
+       
+  document.addEventListener("DOMContentLoaded", function () {
+    const animatedTexts = document.querySelectorAll(".animatedText");
 
+    animatedTexts.forEach((element) => {
+      let text = element.getAttribute("data-text");
+      let index = 0;
 
-   const text = "Years of experience, cutting-edge technology and a commitment to quality. Safe, Reliable, and Efficient Electrical Solutions for Your Home and Business.";
-  let index = 0;
-  function animateText() {
-    if (index < text.length) {
-      document.getElementByClassName("abt-Text").innerHTML += text[index];
-      index++;
-      setTimeout(animateText, 100);
-    }
-  }
-  animateText();
+      function animate() {
+        if (index < text.length) {
+          element.innerHTML += text[index];
+          index++;
+          setTimeout(animate, 100); // Adjust speed here
+        }
+      }
 
+      animate();
+    });
+  });
 
         
 
@@ -279,8 +273,8 @@
     duration: 1.5,
     scrollTrigger: {
       trigger: "#Abt-text",
-      start: "100px", // When the text enters 100% of viewport
-      // Optional: When the text reaches top of viewport
+      start: "top top", // When the text enters 100% of viewport
+      end:"bottom top";// Optional: When the text reaches top of viewport
       toggleActions: "play none none none", // Play once
     }
   });
