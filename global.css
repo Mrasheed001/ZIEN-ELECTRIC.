@@ -135,7 +135,7 @@ i{
 
 .Abt-text {
   opacity: 0; /* Initially hidden */
-  transform: translateY(50px);
+  transform: translateY(100px);
 }
 
 .grid-item{
