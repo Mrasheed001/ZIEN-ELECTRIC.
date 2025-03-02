@@ -49,9 +49,9 @@
       <section id="home-hero" class="hero">
         <div style="text-align: center;" class=" hero-content">
           <h1>
-            <strong class="animatedText">Engineering Excellence,</strong><br class="Abt-text"> Transform Your Space with Expert Electrical services
+            <strong class="animatedText">Engineering Excellence,</strong><br class="scroll-text"> Transform Your Space with Expert Electrical services
           </h1>
-          <p class="animatedText" style="line-height: 30px;">Years of experience, cutting-edge technology and a commitment to quality. Safe, Reliable, and Efficient Electrical Solutions for Your Home and Business. </p>
+          <p class="scroll-Text" style="line-height: 30px;">Years of experience, cutting-edge technology and a commitment to quality. Safe, Reliable, and Efficient Electrical Solutions for Your Home and Business. </p>
           
         </div>
       </section>
@@ -91,21 +91,21 @@
               <img src="about.jpg" style="height: 100vh; width: 100%;" alt=" about image">
             </div>
         
-            <div id=" Abt-text"class="animated-text" style="padding: 0px 15px; padding-top: 10px;">
-              <h2> Welome to ZIEN ELECTRIC Where Power Meets Passion</h2>
-              <p>At ZIEN ELECTRIC we believe that electricity is more than just a necessity - it's a lifeline that conncts us to the people, places and things we love. <br>
+            <div id=" Abt-text" style="padding: 0px 15px; padding-top: 10px;">
+              <h2 classs="scroll-text"> Welome to ZIEN ELECTRIC Where Power Meets Passion</h2>
+              <p classs="scroll-text"  >At ZIEN ELECTRIC we believe that electricity is more than just a necessity - it's a lifeline that conncts us to the people, places and things we love. <br>
               That's why we're dedicated to delivering exceptional electrical services that illuminate your world, comfort your homr and poer your business</p>
             <span class="hide">
-               <h2>Our Story</h2>
-              <p>We're not just electricians - we're neighbours, friends, and family members who care deeply about the communities we serve.<br>
+               <h2 classs="scroll-text" >Our Story</h2>
+              <p classs="scroll-text"  >We're not just electricians - we're neighbours, friends, and family members who care deeply about the communities we serve.<br>
                 Our founder,ZIEN, started this company with a simple yet poerful vision: to provide safe, reliable and efficient electrical solutions that make a real difference in people's live</p>
 
-              <h2>Our Promise</h2>
-              <p>Today, we remain committed to that vision. We promise to treat every customer with kindness, respect, and honesty.<br>
+              <h2 classs="scroll-text" >Our Promise</h2>
+              <p classs="scroll-text" >Today, we remain committed to that vision. We promise to treat every customer with kindness, respect, and honesty.<br>
               We promise to listen carefully to your needs and deliver personalised solutions that exceed your expectations. And we promise to stand behind our work every step of the way.</p>
 
-              <h2>Join Our Family</h2>
-              <p>At ZIEN ELECTRIC we're more than just a company - we're a family of passionate, dedicated professionals who are honored to serve you.<br>
+              <h2 classs="scroll-text" >Join Our Family</h2>
+              <p classs="scroll-text" >At ZIEN ELECTRIC we're more than just a company - we're a family of passionate, dedicated professionals who are honored to serve you.<br>
               So why settle for ordinary electrical services when you can have an exceptional experience with a company that truly cares? Join our family today and discover the difference for yourself.</p>
             </span>
             </div>
@@ -210,7 +210,7 @@
     </main>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="lightbox.min.js"></script>
     <script>
@@ -246,37 +246,20 @@
 
        
   document.addEventListener("DOMContentLoaded", function () {
-    const animatedTexts = document.querySelectorAll(".animatedText");
+    gsap.registerPlugin(ScrollTrigger);
 
-    animatedTexts.forEach((element) => {
-      let text = element.getAttribute("data-text");
-      let index = 0;
-
-      function animate() {
-        if (index < text.length) {
-          element.innerHTML += text[index];
-          index++;
-          setTimeout(animate, 100); // Adjust speed here
-        }
-      }
-
-      animate();
+    gsap.utils.toArray(".scroll-text").forEach((text) => {
+      gsap.from(text, {
+        opacity: 0,
+        y: 50,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: text,
+          start: "top bottom", // Triggers when 80% of viewport
+          toggleActions: "play none none none", // Plays once
+        },
+      });
     });
-  });
-
-        
-
-         
-  gsap.from("#Abt-text", {
-    opacity: 0,
-    y: 50,
-    duration: 1.5,
-    scrollTrigger: {
-      trigger: "#Abt-text",
-      start: "top top", // When the text enters 100% of viewport
-      end:"bottom top";// Optional: When the text reaches top of viewport
-      toggleActions: "play none none none", // Play once
-    }
   });
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
