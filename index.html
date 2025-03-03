@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="bestelectrical Services">
-    <meta name="keywords" content="solar, electrical repairs,solar panel installation, cctv installation, cctv maintenance, solar maintenance">
+    <meta name="description" content="Best electrical Services in Lebanon">
+    <meta name="keywords" content="solar, electrical repairs,solar panel installation, cctv installation in Lebanon, cctv maintenance Lebanon, solar maintenance, Lebanon solar installers, Lebanon CCTV installation">
     <link rel="stylesheet" href="global.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <link rel="stylesheet" href="style.css"/>
@@ -49,9 +49,8 @@
       <section id="home-hero" class="hero">
         <div style="text-align: center;" class=" hero-content">
           <h1>
-            <strong class="animatedText"></strong><br class="scroll-text"> Transform Your Space with Expert Electrical services
-          </h1>
-          <p class="scroll-Text" style="line-height: 30px;">Years of experience, cutting-edge technology and a commitment to quality. Safe, Reliable, and Efficient Electrical Solutions for Your Home and Business. </p>
+            <strong class="animated-text" data-text="Engineering Excellence,"></strong><br class="animatedText" data-text="Transform Your Space with Expert Electrical services"></h1>
+          <p class="animated-text" style="line-height: 30px;">Years of experience, cutting-edge technology and a commitment to quality. Safe, Reliable, and Efficient Electrical Solutions for Your Home and Business. </p>
           
         </div>
       </section>
@@ -92,20 +91,20 @@
             </div>
         
             <div id=" Abt-text" style="padding: 0px 15px; padding-top: 10px;">
-              <h2 classs="scroll-text"> Welome to ZIEN ELECTRIC Where Power Meets Passion</h2>
-              <p classs="scroll-text"  >At ZIEN ELECTRIC we believe that electricity is more than just a necessity - it's a lifeline that conncts us to the people, places and things we love. <br>
+              <h2 classs="animated-text"> Welome to ZIEN ELECTRIC Where Power Meets Passion</h2>
+              <p classs="animated-text"  >At ZIEN ELECTRIC we believe that electricity is more than just a necessity - it's a lifeline that conncts us to the people, places and things we love. <br>
               That's why we're dedicated to delivering exceptional electrical services that illuminate your world, comfort your homr and poer your business</p>
             <span class="hide">
-               <h2 classs="scroll-text" >Our Story</h2>
-              <p classs="scroll-text"  >We're not just electricians - we're neighbours, friends, and family members who care deeply about the communities we serve.<br>
+               <h2 classs="animated-text" >Our Story</h2>
+              <p classs="animated-text"  >We're not just electricians - we're neighbours, friends, and family members who care deeply about the communities we serve.<br>
                 Our founder,ZIEN, started this company with a simple yet poerful vision: to provide safe, reliable and efficient electrical solutions that make a real difference in people's live</p>
 
-              <h2 classs="scroll-text" >Our Promise</h2>
-              <p classs="scroll-text" >Today, we remain committed to that vision. We promise to treat every customer with kindness, respect, and honesty.<br>
+              <h2 classs="animated-text" >Our Promise</h2>
+              <p classs="animated-text" >Today, we remain committed to that vision. We promise to treat every customer with kindness, respect, and honesty.<br>
               We promise to listen carefully to your needs and deliver personalised solutions that exceed your expectations. And we promise to stand behind our work every step of the way.</p>
 
-              <h2 classs="scroll-text" >Join Our Family</h2>
-              <p classs="scroll-text" >At ZIEN ELECTRIC we're more than just a company - we're a family of passionate, dedicated professionals who are honored to serve you.<br>
+              <h2 classs="animated-text" >Join Our Family</h2>
+              <p classs="animated-text" >At ZIEN ELECTRIC we're more than just a company - we're a family of passionate, dedicated professionals who are honored to serve you.<br>
               So why settle for ordinary electrical services when you can have an exceptional experience with a company that truly cares? Join our family today and discover the difference for yourself.</p>
             </span>
             </div>
@@ -246,21 +245,30 @@
 
 
      document.addEventListener("DOMContentLoaded", function () {
-      const text = "Engineering Excellence,";
-      let index = 0;
-      const speed = 100; // Adjust typing speed (lower is faster)
-      const element = document.querySelector(".animatedtext");
+  const elements = document.querySelectorAll(".animated-text");
+  let speed = 100; // Typing speed (lower is faster)
+  let delayBetweenLines = 500; // Delay before next line starts
 
-      function type() {
-        if (index < text.length) {
-          element.innerHTML += text[index];
-          index++;
-          setTimeout(animateText, speed);
-        }
-      }
+  function typeText(element, text, index, callback) {
+    if (index < text.length) {
+      element.innerHTML += text[index];
+      setTimeout(() => typeText(element, text, index + 1, callback), speed);
+    } else {
+      element.style.borderRight = "none"; // Remove cursor after typing
+      setTimeout(callback, delayBetweenLines); // Wait before starting next line
+    }
+  }
 
-      type(); // Start the typing animation
-    });
+  function startTyping(index) {
+    if (index < elements.length) {
+      let element = elements[index];
+      let text = element.getAttribute("data-text");
+      typeText(element, text, 0, () => startTyping(index + 1));
+    }
+  }
+
+  startTyping(0); // Start typing animation for the first element
+});
 
         
        
