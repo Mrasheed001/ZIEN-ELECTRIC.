@@ -133,7 +133,7 @@ i{
     background: rgba(0, 0, 0, 0.3) !important;
 }
 
-.H-text{
+.animatedText{
   width: 0;
   overflow: hidden;
   white-space: nowrap;
