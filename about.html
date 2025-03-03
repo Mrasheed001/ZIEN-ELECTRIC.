@@ -205,31 +205,21 @@
  gsap.from(".h-text", { opacity: 0, x: -50, duration: 2s });
         
 document.addEventListener("DOMContentLoaded", function () {
-  const elements = document.querySelectorAll(".animated-text");
-  let speed = 50; // Typing speed (lower is faster)
-  let delayBetweenLines = 50; // Delay before next line starts
+      const text = element.getAttribute("data-text");
+      let index = 0;
+      const speed = 100; // Adjust typing speed (lower is faster)
+      const element = document.querySelector(".animated-text");
 
-  function typeText(element, text, index, callback) {
-    if (index < text.length) {
-      element.innerHTML += text[index];
-      setTimeout(() => typeText(element, text, index + 1, callback), speed);
-    } else {
-      element.style.borderRight = "none"; // Remove cursor after typing
-      setTimeout(callback, delayBetweenLines); // Wait before starting next line
-    }
-  }
+      function type() {
+        if (index < text.length) {
+          element.innerHTML += text[index];
+          index++;
+          setTimeout(type, speed);
+        }
+      }
 
-  function startTyping(index) {
-    if (index < elements.length) {
-      let element = elements[index];
-      let text = element.getAttribute("data-text");
-      typeText(element, text, 0, () => startTyping(index + 1));
-    }
-  }
-
-  startTyping(0); // Start typing animation for the first element
-});
-
+      type(); // Start the typing animation
+    });
 
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
