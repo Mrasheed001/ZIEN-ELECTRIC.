@@ -136,7 +136,7 @@ i{
 .animated-text {
   font-size: 2rem;
   font-weight: bold;
-  white-space: nowrap;
+  white-space: wrap;
   border-right: 2px solid black; /* Simulates a blinking cursor */
   overflow: hidden;
   display: inline-block;
