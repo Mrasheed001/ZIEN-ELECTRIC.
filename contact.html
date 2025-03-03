@@ -222,17 +222,10 @@
           }
       }
 
-      const hammenu=document.querySelector('.ham-menu');
-
-      const navlinks=document.querySelector('.nav-links');
-
-      hammenu.addEventListener('click', () => {
-        hammenu.classList.toggle('active');
-        navlinks.classList.toggle('active')
-      })
+      
 
 
-          gsap.from(".h-text", { opacity: 0, x: 50, duration: 2s});
+          gsap.from(".h-text", { opacity: 1, x: 50, duration: 2s});
 
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
