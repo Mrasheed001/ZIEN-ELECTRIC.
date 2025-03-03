@@ -60,9 +60,8 @@
             </div>
         
             <div class="animated-text">
-              <h1 class="Abt-text" style="font-weight: 800; margin-top: 20px;"> Meet ZIEN, Your Trusted Electrical Expert</h1>
-              <p class="Abt-text" style="text-align: center; font-size: x-large;
-              line-height: 50px; font-weight: 200;">With over 5years of experience in the electrical industry, ZIEN has established himself as a trusted and reliable expert in electrical installations, solar panel systems, security camera solutions among other electrical skills.<br> <span class="hide">As a licensed and certified electrician, ZIEN is known to deliver top-notch electrical services that meet the highest standards of quality and safety. His commitment to excellence has earned him a reputation as one of the most talented,reliable and efficient electrical expert in Lebanon</span></p>
+              <h1 class="animated-text" style="font-weight: 800; margin-top: 20px;"> Meet ZIEN, Your Trusted Electrical Expert</h1>
+              <p class="animated-text" style="text-align: center; font-size: x-large; line-height: 50px; font-weight: 200;">With over 5years of experience in the electrical industry, ZIEN has established himself as a trusted and reliable expert in electrical installations, solar panel systems, security camera solutions among other electrical skills.<br> <span class="hide">As a licensed and certified electrician, ZIEN is known to deliver top-notch electrical services that meet the highest standards of quality and safety. His commitment to excellence has earned him a reputation as one of the most talented,reliable and efficient electrical expert in Lebanon</span></p>
             </div>
       </section>
 
@@ -209,25 +208,35 @@ document.addEventListener("DOMContentLoaded", function () {
     event.stopPropagation();
   });
 });
+
+ gsap.from(".h-text", { opacity: 0, x: -50, duration: 2s });
         
+document.addEventListener("DOMContentLoaded", function () {
+  const elements = document.querySelectorAll(".animated-text");
+  let speed = 100; // Typing speed (lower is faster)
+  let delayBetweenLines = 300; // Delay before next line starts
 
-
-          gsap.from(".h-text", { opacity: 0, x: -50, duration: 2s });
-
-               gsap.registerPlugin(ScrollTrigger);
-
-  gsap.from(".Abt-text", {
-    opacity: 1,
-    y: 50,
-    duration: 1.5,
-    scrollTrigger: {
-      trigger: ".Abt-text",
-        markers: true;
-      start: "top 10%", // When the text enters 80% of viewport
-      end: center 50%", // Optional: When the text reaches 50% of viewport
-      toggleActions: "play none none none", // Play once
+  function typeText(element, text, index, callback) {
+    if (index < text.length) {
+      element.innerHTML += text[index];
+      setTimeout(() => typeText(element, text, index + 1, callback), speed);
+    } else {
+      element.style.borderRight = "none"; // Remove cursor after typing
+      setTimeout(callback, delayBetweenLines); // Wait before starting next line
     }
-  });
+  }
+
+  function startTyping(index) {
+    if (index < elements.length) {
+      let element = elements[index];
+      let text = element.getAttribute("data-text");
+      typeText(element, text, 0, () => startTyping(index + 1));
+    }
+  }
+
+  startTyping(0); // Start typing animation for the first element
+});
+
 
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
