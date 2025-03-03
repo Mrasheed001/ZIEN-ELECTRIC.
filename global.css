@@ -367,7 +367,7 @@ a .btn{
         }
     }
 
-    @media(width: 414px){
+    @media(max-width: 500px){
         .hero{
     background: url('bg-image.jpg') no-repeat center center/cover;
     height: 100vh;
@@ -375,6 +375,10 @@ a .btn{
     color: #000;
     background-attachment: fixed;
     margin-bottom: 20px;
+    background-size: 100% 100%;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
         }
     .fa-papper-plane{
         transform: translateX(-130);
