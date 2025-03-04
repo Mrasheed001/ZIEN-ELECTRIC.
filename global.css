@@ -367,7 +367,7 @@ a .btn{
         grid-template-rows: repeat(2, 100vh);
         grid-template-columns: 1fr;
         row-gap: 20px;
-        padding-bottom: 10px;
+        padding-bottom: 25px;
     }
 
     .grid-item img{
