@@ -5,7 +5,7 @@
 }
 
 @import
-url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;100&display=swap');
+url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 body{
     background:rgb(223, 221, 221);
 }
@@ -356,9 +356,9 @@ a .btn{
     }
 
     p{
-        font-size:large;
+        font-size:normal;
         font-family:'montserrat'sans-serif;
-        line-height:20px;
+        line-height:1.8;
     }
 
 
