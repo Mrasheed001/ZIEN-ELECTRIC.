@@ -213,7 +213,7 @@
               <div style="margin-left: 0px;margin-top: 0px;">
                     <h3>Our Newsletter</h3>
                     <p>Subscribe Now</p>
-                    <form id="subscribe-form">
+                    <form action="https://formsubmit.co/zeink.zk@gmail.com" method="POST">
                       <input type="email" id="email" name="email" style="border-radius: 15px;
                       padding: 10px 0;position: absolute;" placeholder="Enter your email address" required>
                     
@@ -310,10 +310,6 @@
   startTyping(0); // Start typing animation for the first element
 });
 
-document.getElementById("subscribe-form").addEventListiner("submit", function(event){
-    event.preventDefault();
-
-    });
                  
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
