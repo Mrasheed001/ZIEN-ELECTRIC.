@@ -147,6 +147,22 @@ i{
   50% { border-color: transparent; }
 }
 
+@keyframes bounceUp{
+    0%{
+        opacity:0;
+        transform:translateY(50PX)
+    }
+    50%{
+        opacity:1;
+        transform:translateY(-10px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+.bouncUp{
+    animation:bounUp 0.8s ease-out;
+}
 .grid-item{
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -334,6 +350,10 @@ a .btn{
         font-weight: xx-large;
         letter-spacing: 1.2px;
         line-height: 18px;
+    }
+
+    p{
+        font-size:large;
     }
 
 
