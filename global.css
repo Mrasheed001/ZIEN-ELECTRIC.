@@ -4,6 +4,8 @@
     padding: 0;
 }
 
+@import
+url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 body{
     background:rgb(223, 221, 221);
 }
@@ -355,6 +357,8 @@ a .btn{
 
     p{
         font-size:large;
+        font-family:'montserrat'sans-serif;
+        line-height:7px;
     }
 
 
