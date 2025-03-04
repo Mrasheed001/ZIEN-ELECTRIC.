@@ -60,14 +60,14 @@
             </div>
         
             <div class="animated-text">
-              <h1 class="animated-text" style="font-weight: 800; margin-top: 20px;" data-text:Meet ZIEN, Your Trusted Electrical Expert;></h1>
+              <h1 style="font-weight: 800; margin-top: 20px;" data-text:Meet ZIEN, Your Trusted Electrical Expert;></h1>
               <p class="animated-text" style="text-align: center; font-size: x-large; line-height: 50px; font-weight: 200;" data-text="With over 5years of experience in the electrical industry, ZIEN has established himself as a trusted and reliable expert in electrical installations, solar panel systems, security camera solutions among other electrical skills.As a licensed and certified electrician, ZIEN is known to deliver top-notch electrical services"> <span class="hide"> that meet the highest standards of quality and safety. His commitment to excellence has earned him a reputation as one of the most talented,reliable and efficient electrical expert in Lebanon</span></p>
             </div>
       </section>
 
       <article id="services">
 
-         <div class="flex-item" style="gap: 0 10px;font-size: larger; line-height: 900rem;">
+         <div class="flex-item animatedText" style="gap: 0 10px;font-size: larger; line-height: 900rem;">
                 <div>
                     <h3>Our Mission</h3>
                     <p class="margin">At ZIEN ELECTRIC, our mission is to provide safe, reliable, and efficient electrical solutions that exceed our custoers' expectations. <br><br>
@@ -200,10 +200,10 @@
       })
 
 
-     document.addEventListener("DOMContentLoaded", function () {
+          document.addEventListener("DOMContentLoaded", function () {
   const elements = document.querySelectorAll(".animated-text");
   let speed = 100; // Typing speed (lower is faster)
-  let delayBetweenLines = 100; // Delay before next line starts
+  let delayBetweenLines = 300; // Delay before next line starts
 
   function typeText(element, text, index, callback) {
     if (index < text.length) {
@@ -228,22 +228,7 @@
 
         
        
-  document.addEventListener("DOMContentLoaded", function () {
-    gsap.registerPlugin(ScrollTrigger);
 
-    gsap.utils.toArray(".scroll-text").forEach((text) => {
-      gsap.from(text, {
-        opacity: 1,
-        y: 50,
-        duration: 1.5,
-        scrollTrigger: {
-          trigger: text,
-          start: "top 80%", // Triggers when 80% of viewport
-          once: "true", // Plays once
-        },
-      });
-    });
-  });
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
