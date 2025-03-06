@@ -423,7 +423,7 @@ a .btn{
     background-position: center;
         }
     .fa-papper-plane{
-        transform: translateX(-130);
+        transform: translateY(20);
     }
         
     }
