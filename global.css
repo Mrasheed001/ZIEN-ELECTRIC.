@@ -180,8 +180,8 @@ i{
     display:flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
-    padding: 30px 10px;
+    justify-content: space-between;
+    padding: 30px 20px;
 }
 
 
@@ -214,8 +214,11 @@ a .btn{
 
 .flex-item.footer{
     align-items: center;
-    justify-content: space-between;
-    text-align: center;
+    justify-content: space-around;
+    text-align: center; 
+    line-height: 15px 0px;
+    border-spacing: 1px #fff solid;
+    border-color: chartreuse;
 }
 
 
@@ -223,12 +226,6 @@ a .btn{
     display:none;
 }
 
-.flex-item.footer{
-    line-height: 15px 0px;
-    justify-content: space-between;
-    border-spacing: 1px #fff solid;
-    border-color: chartreuse;
-}
 
 #footer{
     line-height: 22px;
